@@ -27,17 +27,17 @@ const getAccess = () => {
 export default {
   // 支持值为 Object 和 Array
   'GET /api/currentUser': (req, res) => {
-    if (!getAccess()) {
-      res.status(401).send({
-        data: {
-          isLogin: false,
-        },
-        errorCode: '401',
-        errorMessage: '请先登录！',
-        success: true,
-      });
-      return;
-    }
+    // if (!getAccess()) {
+    //   res.status(401).send({
+    //     data: {
+    //       isLogin: false,
+    //     },
+    //     errorCode: '401',
+    //     errorMessage: '请先登录！',
+    //     success: true,
+    //   });
+    //   return;
+    // }
 
     res.send({
       success: true,
@@ -115,47 +115,47 @@ export default {
       address: 'Sidney No. 1 Lake Park',
     },
   ],
-  'POST /api/login/account': async (req, res) => {
-    const { password, username, type } = req.body;
-    await waitTime(2000);
-
-    if (password === 'admin' && username === 'admin') {
-      res.send({
-        status: 'ok',
-        type,
-        currentAuthority: 'admin',
-      });
-      access = 'admin';
-      return;
-    }
-
-    if (password === 'user' && username === 'user') {
-      res.send({
-        status: 'ok',
-        type,
-        currentAuthority: 'user',
-      });
-      access = 'user';
-      return;
-    }
-
-    if (type === 'mobile') {
-      res.send({
-        status: 'ok',
-        type,
-        currentAuthority: 'admin',
-      });
-      access = 'admin';
-      return;
-    }
-
-    res.send({
-      status: 'error',
-      type,
-      currentAuthority: 'guest',
-    });
-    access = 'guest';
-  },
+  // 'POST /api/login/account': async (req, res) => {
+  //   const { password, username, type } = req.body;
+  //   await waitTime(2000);
+  //
+  //   if (password === 'admin' && username === 'admin') {
+  //     res.send({
+  //       status: 'ok',
+  //       type,
+  //       currentAuthority: 'admin',
+  //     });
+  //     access = 'admin';
+  //     return;
+  //   }
+  //
+  //   if (password === 'user' && username === 'user') {
+  //     res.send({
+  //       status: 'ok',
+  //       type,
+  //       currentAuthority: 'user',
+  //     });
+  //     access = 'user';
+  //     return;
+  //   }
+  //
+  //   if (type === 'mobile') {
+  //     res.send({
+  //       status: 'ok',
+  //       type,
+  //       currentAuthority: 'admin',
+  //     });
+  //     access = 'admin';
+  //     return;
+  //   }
+  //
+  //   res.send({
+  //     status: 'error',
+  //     type,
+  //     currentAuthority: 'guest',
+  //   });
+  //   access = 'guest';
+  // },
   'POST /api/login/outLogin': (req, res) => {
     access = '';
     res.send({
