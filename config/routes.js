@@ -24,30 +24,18 @@ export default [
     icon: 'smile',
     component: './Welcome',
   },
-  // {
-  //   path: '/admin',
-  //   name: 'admin',
-  //   icon: 'crown',
-  //   access: 'canAdmin',
-  //   component: './Admin',
-  //   routes: [
-  //     {
-  //       path: '/admin/sub-page',
-  //       name: 'sub-page',
-  //       icon: 'smile',
-  //       component: './Welcome',
-  //     },
-  //     {
-  //       component: './404',
-  //     },
-  //   ],
-  // },
-  // {
-  //   name: 'list.table-list',
-  //   icon: 'table',
-  //   path: '/list',
-  //   component: './TableList',
-  // },
+  {
+    name: 'project',
+    icon: 'GroupOutlined',
+    path: '/project',
+    component: './Project',
+  },
+  {
+    path: '/template',
+    name: 'template',
+    icon: 'ShoppingOutlined',
+    component: './Template',
+  },
   {
     path: '/',
     redirect: '/welcome',
