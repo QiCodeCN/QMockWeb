@@ -5,3 +5,10 @@ export async function getProductList() {
     method: 'GET'
   });
 }
+
+export async function saveProduct(data) {
+  return request('/api/mock/project/save', {
+    method: 'POST',
+    data
+  });
+}

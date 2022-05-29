@@ -37,6 +37,23 @@ export default [
     component: './Template',
   },
   {
+    path: '/Exercise',
+    name: 'exercise',
+    icon: 'AppstoreAddOutlined',
+    routes: [
+      {
+        path: '/Exercise/ModalDemo',
+        name: 'ModalDemo',
+        component: './Exercise/ModalDemo'
+      },
+      {
+        path: '/Exercise/FormDemo',
+        name: 'FormDemo',
+        component: './Exercise/FormDemo'
+      },
+    ]
+  },
+  {
     path: '/',
     redirect: '/welcome',
   },
