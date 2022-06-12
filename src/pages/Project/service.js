@@ -12,3 +12,16 @@ export async function saveProduct(data) {
     data
   });
 }
+
+export async function removeProduct(id) {
+  return request('/api/mock/project/remove?id='+id, {
+    method: 'POST'
+  });
+}
+
+export async function searchProducts(params) {
+  return request('/api/mock/project/search', {
+    method: 'GET',
+    params
+  });
+}
