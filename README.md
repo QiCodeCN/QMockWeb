@@ -1,2 +1,2 @@
 # QMockWeb
-测试工具平台开发系列之Mock平台的前端页面项目
+项目已经升级并迁移到QMockService项目下[qmock-web-antdpro](https://github.com/QiCodeCN/QMockService/tree/master/qmock-web-antdpro)
